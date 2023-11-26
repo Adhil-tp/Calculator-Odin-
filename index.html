@@ -8,28 +8,53 @@
 <body>
     <style>
         body{
+            background-image: url(backGround\ Image.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
         .calculator{
+            background-color: #ecf0f1;
             border: 1px solid grey;
             border-radius: 20px;
             overflow: hidden;
-            padding: 10px;
+            padding: 20px 10px ;
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
-        .calculator  button{
+        .calculator button{
+            font-size: large;
+        }
+        .calculator .numbers button{
             height: 40px;
             width: 40px;
             margin-left: 0.5rem;
             margin-right: 0.5rem;
             border-radius: 20px;
-            border: 1px solid grey;
-            background-color: white;
+            border: 1px solid #2980b9;
+            background-color: #3498db;
+            color: #ffffff;
+            font-weight: bolder;
+        }
+        .calculator .clear-row button{
+            border: 1px solid #2980b9;
+            background-color: #3498db;
+            color: #ffffff;
+        }
+
+        .calculator .numbers .number{
+            transition: box-shadow 0.5s ease, font-size 0.3s ease;
+        }
+        .calculator .numbers .number:hover{
+            background-color: #2980b9;
+            color: #ffffff;
+            box-shadow: 0px 0px 15px #154360;
         }
         #display{
             display: flex;
@@ -38,8 +63,31 @@
             padding: 10px;
             height: 30px;
             border-radius: 20px;
-            background-color: grey;
+            background-color: #a2bbcf;
             color: white;
+        }
+        .clear-row{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+        .clear-row button{
+            width: 100px;
+            border-radius: 20px;
+            border: 1px solid white;
+            height: 40px;
+            background-color: white;
+        } 
+        .calculator .clear-row .Equal-button:hover{
+            background-color: #2ecc71;
+            color: #ffffff;
+            box-shadow: 0px 0px 15px #196f33;
+        }
+        #clearbutton:hover{
+            background-color: #e74c3c;
+            color: #ffffff;
+            box-shadow: 0px 0px 15px #942a25;
         }
     </style>
 <div class="calculator">
@@ -66,11 +114,16 @@
         <button class="operator" id="Add">+</button>
     </div>
 
-    <div class="last-row">
-        <button class="number" id=".">.</button>
+    <div class="numbers">
+        <button class="dot" id="dot-button">.</button>
         <button class="number" id="0">0</button>
-        <button class="Equal-button" id="Equals">=</button>
+        <button class="plus-minus" id="plus-and-minus">+/-</button>
         <button class="operator" id="Substract">-</button>
+    </div>
+
+    <div class="clear-row">
+        <button class="Equal-button" id="Equals">=</button>
+        <button id="clearbutton">CE</button>
     </div>
 </div>
 
